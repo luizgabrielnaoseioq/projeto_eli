@@ -1,0 +1,20 @@
+meta {
+  name: Testes
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:8080/grupo/update/3
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id":3,
+    "nome":"Avenger22222",
+    "descricao":"Grupo focado em combater o crime",
+    "email":"avengerscriciuma@gmail.com"
+  }
+}

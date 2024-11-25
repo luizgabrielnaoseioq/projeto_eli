@@ -1,0 +1,15 @@
+<form   th:action="@{/grupo/listarTodosGrupos}"
+        th:object="${grupo}" method="post">
+  <h3>Formulário de Criação de Grupos</h3>
+
+  <label>Nome do grupo:</label>
+  <input type="text" th:field="*{nome}">
+
+  <label>Responsável:</label>
+  <input type="text" th:field="*{responsavel}">
+
+  <label>E-mail de Contato</label>
+  <textarea th:field="*{descricao}"></textarea>
+
+  <button type="submit">Salvar</button>
+</form>

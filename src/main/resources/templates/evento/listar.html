@@ -1,0 +1,22 @@
+
+<a href="/evento/criar">Adicionar Evento</a>
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Data</th>
+        <th>Descrição</th>
+        <th>Valor da Inscrição</th>
+        <th>Ações</th>
+    </tr>
+    <tr th:each="tarefa : ${listaEventosNoFront}">
+        <td th:text="${tarefa.id}"></td>
+        <td th:text="${tarefa.nome}"></td>
+        <td th:text="${tarefa.data}"></td>
+        <td th:text="${tarefa.descricao}"></td>
+        <td th:text="${tarefa.valor}"></td>
+        <td>
+            <a href="@{/tarefa/alterar/{id}(id=${tarefa.id})}">Alterar</a>
+        </td>
+    </tr>
+</table>
