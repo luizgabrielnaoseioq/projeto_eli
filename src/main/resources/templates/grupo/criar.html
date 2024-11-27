@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<form th:action="@{/grupo/criar}" method="post">
+    <h3>Formulário de Criação de Prupos</h3>
 
-</body>
-</html>
+    <label>Nome:</label>
+    <input type="text" th:field="*{nome}">
+
+    <label>Data:</label>
+    <input type="text" th:field="*{email}">
+
+    <label>Descrição</label>
+    <textarea th:field="*{descricao}"></textarea>
+
+    <button type="submit">Salvar</button>
+</form>

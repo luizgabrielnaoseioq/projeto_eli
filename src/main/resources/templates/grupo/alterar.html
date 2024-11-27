@@ -1,12 +1,13 @@
-<form   th:action="@{/update/{id}(id=${id})}"
-        th:object="${evento}" method="post">
+
+<form   th:action="@{/grupo/alterar/{id}(id=${id})}"
+        th:object="${grupo}" method="post">
   <h3>Formulário de Criação de Eventos</h3>
 
   <label>Nome:</label>
   <input type="text" th:field="*{nome}">
 
   <label>Data:</label>
-  <input type="date" th:field="*{data}">
+  <input type="text" th:field="*{email}">
 
   <label>Descrição</label>
   <textarea th:field="*{descricao}"></textarea>

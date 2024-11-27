@@ -1,15 +1,20 @@
-<form   th:action="@{/grupo/listarTodosGrupos}"
-        th:object="${grupo}" method="post">
-  <h3>Formulário de Criação de Grupos</h3>
 
-  <label>Nome do grupo:</label>
-  <input type="text" th:field="*{nome}">
-
-  <label>Responsável:</label>
-  <input type="text" th:field="*{responsavel}">
-
-  <label>E-mail de Contato</label>
-  <textarea th:field="*{descricao}"></textarea>
-
-  <button type="submit">Salvar</button>
-</form>
+<a href="/evento/criar">Listar Grupos</a>
+<table border="1">
+  <tr>
+    <th>#</th>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Descrição</th>
+    <th>Ações</th>
+  </tr>
+  <tr th:each="tarefa : ${listaEventosNoFront}">
+    <td th:text="${tarefa.id}"></td>
+    <td th:text="${tarefa.nome}"></td>
+    <td th:text="${tarefa.email}"></td>
+    <td th:text="${tarefa.descricao}"></td>
+    <td>
+      <a href="@{/tarefa/alterar/{id}(id=${tarefa.id})}">Alterar</a>
+    </td>
+  </tr>
+</table>
