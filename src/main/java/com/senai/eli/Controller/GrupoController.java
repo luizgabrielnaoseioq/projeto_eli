@@ -23,7 +23,7 @@ public class GrupoController {
         return "evento/criar";
     }
 
-    @PostMapping("grupo/criar")
+    @PostMapping("/grupo/criar")
     public String criar(Grupo gp){
         gr.save(gp);
         return "redirect:/grupo";

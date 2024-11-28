@@ -1,5 +1,7 @@
 package com.senai.eli.Model;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,15 +16,16 @@ public class Grupo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome")
+    @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Column(name = "reponsavel")
+    @Column(name = "reponsavel", nullable = false)
     private String responsavel;
 
     @Column(name = "descricao")
     private String descricao;
 
-    @Column(name = "email")
-    private String email;
+    @OneToMany(mappedBy = "grupo")
+    private List<Evento> eventos;
+    
 }
